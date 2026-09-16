@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const benchmarksData = require('./benchmarks.json');
 const { formatCurrency, formatPercent, avg, daysBetween } = require('./utils');
+const { renderReportHtml } = require('./report-template');
 
 const STAGE_ORDER = ['lead', 'qualified_opportunity', 'proposal', 'due_diligence', 'negotiation'];
 
@@ -142,48 +143,49 @@ function generateReport(deals, benchmarkKey = 'b2b_fintech') {
   return { metrics, gaps, levers };
 }
 
-function printReport({ metrics, gaps, levers }) {
-  console.log('=== RevOps Diagnostic Report ===\n');
+function humanizeBenchmarkKey(key) {
+  return key.split('_').map(w => (w.toLowerCase() === 'b2b' ? 'B2B' : w.charAt(0).toUpperCase() + w.slice(1))).join(' ');
+}
 
-  console.log('Pipeline Metrics');
-  console.log(`  Deals analyzed:     ${metrics.dealCount} (${metrics.openDealCount} open)`);
-  console.log(`  Conversion rate:    ${formatPercent(metrics.conversionRate)}`);
-  console.log(`  Sales cycle:        ${Math.round(metrics.salesCycleDays)} days`);
-  console.log(`  Avg deal size:      ${formatCurrency(metrics.avgDealSize)}`);
+// Reshapes a generateReport() result into the data the HTML dashboard template expects.
+function buildDashboardData({ metrics, levers }, benchmarkKey = 'b2b_fintech') {
+  const benchmark = benchmarksData[benchmarkKey];
 
-  console.log('\nGaps vs. Benchmark');
-  if (!gaps.length) {
-    console.log('  None — pipeline is at or above benchmark on every metric.');
-  } else {
-    for (const gap of gaps) {
-      const format = gap.type === 'sales_cycle_days'
-        ? v => `${Math.round(v)} days`
-        : gap.type === 'avg_deal_size'
-          ? formatCurrency
-          : formatPercent;
-      console.log(`  ${gap.label}: ${format(gap.actual)} vs. ${format(gap.benchmark)} benchmark`);
-    }
-  }
-
-  console.log('\nTop Revenue Levers');
-  if (!levers.length) {
-    console.log('  None — no lever produces a positive revenue uplift.');
-  } else {
-    levers.forEach((lever, i) => {
-      console.log(`  ${i + 1}. ${lever.label} — ${formatCurrency(lever.annualImpact)}/yr uplift`);
-      console.log(`     ${lever.recommendation}`);
-    });
-  }
+  return {
+    dealCount: metrics.dealCount,
+    openDealCount: metrics.openDealCount,
+    benchmarkLabel: humanizeBenchmarkKey(benchmarkKey),
+    metrics: {
+      conversionRate: { actual: metrics.conversionRate, benchmark: benchmark.conversion_rate, format: 'pct', label: 'Conversion Rate', higherIsBetter: true },
+      salesCycleDays: { actual: metrics.salesCycleDays, benchmark: benchmark.sales_cycle_days, format: 'days', label: 'Sales Cycle', higherIsBetter: false },
+      avgDealSize: { actual: metrics.avgDealSize, benchmark: benchmark.avg_deal_size, format: 'usd', label: 'Avg. Contract Value', higherIsBetter: true }
+    },
+    stages: STAGE_ORDER.map(stage => ({
+      key: stage,
+      label: benchmark.stage_names[stage],
+      actual: metrics.stageWinRates[stage],
+      benchmark: benchmark.stage_benchmarks[stage]
+    })),
+    levers: levers.map(l => ({ label: l.label, recommendation: l.recommendation, annualImpact: l.annualImpact }))
+  };
 }
 
 function main() {
   const dealsPath = process.argv[2] || path.join(__dirname, 'sample-deals.json');
+  const outputPath = process.argv[3] || path.join(__dirname, 'report.html');
+  const benchmarkKey = 'b2b_fintech';
+
   const deals = JSON.parse(fs.readFileSync(dealsPath, 'utf8'));
-  printReport(generateReport(deals));
+  const report = generateReport(deals, benchmarkKey);
+  const html = renderReportHtml(buildDashboardData(report, benchmarkKey));
+
+  fs.writeFileSync(outputPath, html);
+  console.log(`Diagnostic report written to ${outputPath}`);
+  console.log(`Top lever: ${report.levers[0].label} (+${formatCurrency(report.levers[0].annualImpact)}/yr)`);
 }
 
 if (require.main === module) {
   main();
 }
 
-module.exports = { calculateMetrics, compareToBenchmarks, rankLevers, generateReport, getStageWinRate };
+module.exports = { calculateMetrics, compareToBenchmarks, rankLevers, generateReport, getStageWinRate, buildDashboardData };
