@@ -1,0 +1,21 @@
+{
+  "b2b_fintech": {
+    "conversion_rate": 0.18,
+    "sales_cycle_days": 105,
+    "avg_deal_size": 400000,
+    "stage_benchmarks": {
+      "lead": 0.25,
+      "qualified_opportunity": 0.40,
+      "proposal": 0.65,
+      "due_diligence": 0.75,
+      "negotiation": 0.90
+    },
+    "stage_names": {
+      "lead": "Lead",
+      "qualified_opportunity": "Qualified Opportunity",
+      "proposal": "Proposal",
+      "due_diligence": "Due Diligence",
+      "negotiation": "Negotiation"
+    }
+  }
+}
