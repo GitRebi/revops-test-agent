@@ -1,0 +1,372 @@
+[
+  {
+    "id": "D-1",
+    "name": "Acme Deal 2",
+    "outcome": "won",
+    "stage": "negotiation",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence",
+      "negotiation"
+    ],
+    "amount": 250000,
+    "created_date": "2025-11-01",
+    "closed_date": "2026-03-21"
+  },
+  {
+    "id": "D-2",
+    "name": "Acme Deal 3",
+    "outcome": "won",
+    "stage": "negotiation",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence",
+      "negotiation"
+    ],
+    "amount": 300000,
+    "created_date": "2025-12-01",
+    "closed_date": "2026-04-05"
+  },
+  {
+    "id": "D-3",
+    "name": "Acme Deal 4",
+    "outcome": "won",
+    "stage": "negotiation",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence",
+      "negotiation"
+    ],
+    "amount": 420000,
+    "created_date": "2025-10-15",
+    "closed_date": "2026-03-14"
+  },
+  {
+    "id": "D-4",
+    "name": "Prospect Co 5",
+    "outcome": "lost",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 175000,
+    "created_date": "2025-10-05",
+    "closed_date": "2026-04-15"
+  },
+  {
+    "id": "D-5",
+    "name": "Prospect Co 6",
+    "outcome": "lost",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 180000,
+    "created_date": "2025-11-05",
+    "closed_date": "2026-05-15"
+  },
+  {
+    "id": "D-6",
+    "name": "Prospect Co 7",
+    "outcome": "lost",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 185000,
+    "created_date": "2025-12-05",
+    "closed_date": "2026-06-15"
+  },
+  {
+    "id": "D-7",
+    "name": "Prospect Co 8",
+    "outcome": "lost",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 190000,
+    "created_date": "2025-01-05",
+    "closed_date": "2026-01-15"
+  },
+  {
+    "id": "D-8",
+    "name": "Prospect Co 9",
+    "outcome": "lost",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 195000,
+    "created_date": "2025-02-05",
+    "closed_date": "2026-02-15"
+  },
+  {
+    "id": "D-9",
+    "name": "Prospect Co 10",
+    "outcome": "lost",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 200000,
+    "created_date": "2025-03-05",
+    "closed_date": "2026-03-15"
+  },
+  {
+    "id": "D-10",
+    "name": "Prospect Co 11",
+    "outcome": "lost",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 205000,
+    "created_date": "2025-04-05",
+    "closed_date": "2026-04-15"
+  },
+  {
+    "id": "D-11",
+    "name": "Prospect Co 12",
+    "outcome": "lost",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 210000,
+    "created_date": "2025-05-05",
+    "closed_date": "2026-05-15"
+  },
+  {
+    "id": "D-12",
+    "name": "Prospect Co 13",
+    "outcome": "lost",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 215000,
+    "created_date": "2025-06-05",
+    "closed_date": "2026-06-15"
+  },
+  {
+    "id": "D-13",
+    "name": "Prospect Co 14",
+    "outcome": "lost",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 220000,
+    "created_date": "2025-07-05",
+    "closed_date": "2026-01-15"
+  },
+  {
+    "id": "D-14",
+    "name": "Prospect Co 15",
+    "outcome": "lost",
+    "stage": "proposal",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal"
+    ],
+    "amount": 225000,
+    "created_date": "2025-08-05",
+    "closed_date": "2026-02-15"
+  },
+  {
+    "id": "D-15",
+    "name": "Prospect Co 16",
+    "outcome": "lost",
+    "stage": "proposal",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal"
+    ],
+    "amount": 230000,
+    "created_date": "2025-09-05",
+    "closed_date": "2026-03-15"
+  },
+  {
+    "id": "D-16",
+    "name": "Prospect Co 17",
+    "outcome": "lost",
+    "stage": "proposal",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal"
+    ],
+    "amount": 235000,
+    "created_date": "2025-10-05",
+    "closed_date": "2026-04-15"
+  },
+  {
+    "id": "D-17",
+    "name": "Prospect Co 18",
+    "outcome": "lost",
+    "stage": "proposal",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal"
+    ],
+    "amount": 240000,
+    "created_date": "2025-11-05",
+    "closed_date": "2026-05-15"
+  },
+  {
+    "id": "D-18",
+    "name": "Prospect Co 19",
+    "outcome": "lost",
+    "stage": "due_diligence",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence"
+    ],
+    "amount": 245000,
+    "created_date": "2025-12-05",
+    "closed_date": "2026-06-15"
+  },
+  {
+    "id": "D-19",
+    "name": "Prospect Co 20",
+    "outcome": "lost",
+    "stage": "due_diligence",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence"
+    ],
+    "amount": 250000,
+    "created_date": "2025-01-05",
+    "closed_date": "2026-01-15"
+  },
+  {
+    "id": "D-20",
+    "name": "Prospect Co 21",
+    "outcome": "lost",
+    "stage": "negotiation",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence",
+      "negotiation"
+    ],
+    "amount": 255000,
+    "created_date": "2025-02-05",
+    "closed_date": "2026-02-15"
+  },
+  {
+    "id": "D-21",
+    "name": "Open Opportunity 22",
+    "outcome": "open",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 334000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  },
+  {
+    "id": "D-22",
+    "name": "Open Opportunity 23",
+    "outcome": "open",
+    "stage": "lead",
+    "stages_reached": [
+      "lead"
+    ],
+    "amount": 341000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  },
+  {
+    "id": "D-23",
+    "name": "Open Opportunity 24",
+    "outcome": "open",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 348000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  },
+  {
+    "id": "D-24",
+    "name": "Open Opportunity 25",
+    "outcome": "open",
+    "stage": "qualified_opportunity",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity"
+    ],
+    "amount": 355000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  },
+  {
+    "id": "D-25",
+    "name": "Open Opportunity 26",
+    "outcome": "open",
+    "stage": "proposal",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal"
+    ],
+    "amount": 362000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  },
+  {
+    "id": "D-26",
+    "name": "Open Opportunity 27",
+    "outcome": "open",
+    "stage": "due_diligence",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence"
+    ],
+    "amount": 369000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  },
+  {
+    "id": "D-27",
+    "name": "Open Opportunity 28",
+    "outcome": "open",
+    "stage": "negotiation",
+    "stages_reached": [
+      "lead",
+      "qualified_opportunity",
+      "proposal",
+      "due_diligence",
+      "negotiation"
+    ],
+    "amount": 376000,
+    "created_date": "2026-08-01",
+    "closed_date": null
+  }
+]
